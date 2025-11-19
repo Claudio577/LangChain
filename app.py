@@ -1,6 +1,10 @@
 import streamlit as st
 import langchain
+import os
+
+
 st.write("API KEY carregada?", os.getenv("OPENAI_API_KEY") is not None)
+
 # tentativa de detectar se o pacote está presente
 try:
     import langchain_openai
