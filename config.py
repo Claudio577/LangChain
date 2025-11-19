@@ -1,10 +1,9 @@
-# config.py
-import os
 from langchain_openai import ChatOpenAI
+import os
 
 def get_llm():
     return ChatOpenAI(
-        model="gpt-4.1-mini",   # <- ESTE É 100% COMPATÍVEL
+        model="gpt-4o-mini",
         temperature=0.1,
-        openai_api_key=os.getenv("OPENAI_API_KEY")
+        api_key=os.getenv("OPENAI_API_KEY")
     )
