@@ -1,4 +1,6 @@
-from langchain.agents import initialize_agent, AgentType
+from langchain.agents import create_react_agent
+from langchain.tools import Tool
+from langchain.prompts import ChatPromptTemplate
 from config import get_llm
 
 EXECUTIVE_PROMPT = """
@@ -18,12 +20,20 @@ Sempre responda com clareza executiva.
 def criar_agente_executivo():
     llm = get_llm()
 
-    agente = initialize_agent(
-        tools=[],
+    # Prompt moderno, compatível com LangChain 0.2.x
+    prompt = ChatPromptTemplate.from_messages([
+        ("system", EXECUTIVE_PROMPT),
+        ("human", "{input}")
+    ])
+
+    # Nenhuma tool (por enquanto)
+    tools = []
+
+    agente = create_react_agent(
         llm=llm,
-        agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-        verbose=False,
-        system_message=EXECUTIVE_PROMPT
+        tools=tools,
+        prompt=prompt,
+        verbose=False
     )
 
     return agente
