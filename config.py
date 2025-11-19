@@ -1,10 +1,15 @@
-from langchain_openai import ChatOpenAI
+# config.py
 import os
 
+# FORÇAR import da biblioteca certa
+import langchain_openai.chat_models
+from langchain_openai.chat_models import ChatOpenAI
+
+print("Carregando ChatOpenAI de:", ChatOpenAI.__module__)
+
 def get_llm():
-    print("Using ChatOpenAI from module:", ChatOpenAI.__module__)
     return ChatOpenAI(
         model="gpt-4o-mini",
-        temperature=0.1,
-        api_key=os.getenv("OPENAI_API_KEY")
+        api_key=os.getenv("OPENAI_API_KEY"),
+        temperature=0.1
     )
