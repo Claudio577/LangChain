@@ -1,6 +1,8 @@
 from langchain_openai.chat_models import ChatOpenAI
 
 import os
+import langchain_openai
+print("Using langchain_openai from:", langchain_openai.__file__)
 
 def get_llm():
     return ChatOpenAI(
