@@ -1,19 +1,11 @@
 streamlit==1.39.0
-
-# LangChain (versões estáveis e compatíveis)
 langchain==0.2.14
 langchain-core==0.2.36
 langchain-community==0.2.12
 langchain-openai==0.1.14
-
-# OpenAI SDK novo
 openai==1.40.2
-
-# Vector DB (vamos ativar depois)
 chromadb==0.5.5
-
-# Extras
-tiktoken
+python-dotenv
 pypdf
 python-docx
-python-dotenv
+tiktoken
