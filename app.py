@@ -1,9 +1,16 @@
 import streamlit as st
 import langchain
-import langchain_openai
+
+# tentativa de detectar se o pacote está presente
+try:
+    import langchain_openai
+    st.write("LangChain-OpenAI:", langchain_openai.__version__)
+except Exception as e:
+    st.write("LangChain-OpenAI NÃO INSTALADO:", e)
 
 st.write("LangChain:", langchain.__version__)
-st.write("LangChain-OpenAI:", langchain_openai.__version__)
+
+from agents.agente_executivo import criar_agente_executivo
 
 st.title("💼 Agente Executivo – Estratégia Corporativa")
 
@@ -15,7 +22,6 @@ if st.button("Enviar"):
 
     st.markdown("### 📌 Resposta Executiva")
     
-    # LangChain retorna dict, pegar chave correta
     if isinstance(resposta, dict):
         if "output" in resposta:
             st.write(resposta["output"])
@@ -25,3 +31,4 @@ if st.button("Enviar"):
             st.write(resposta)
     else:
         st.write(resposta)
+
