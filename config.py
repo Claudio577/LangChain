@@ -1,9 +1,10 @@
-from langchain_openai import ChatOpenAI
+# config.py
 import os
+from langchain_openai import ChatOpenAI
 
 def get_llm():
     return ChatOpenAI(
-        model="gpt-4o-mini",
+        model="gpt-4o-mini",     # modelo estável e 100% compatível
         temperature=0.1,
-        openai_api_key=os.getenv("OPENAI_API_KEY")  
+        api_key=os.getenv("OPENAI_API_KEY")  # chave vinda do Streamlit Secrets
     )
