@@ -1,10 +1,16 @@
 streamlit==1.39.0
+
+# LangChain (versão moderna e estável)
 langchain==0.2.14
-langchain-core==0.2.36
-langchain-community==0.2.12
-langchain_openai==0.1.14
+langchain-openai==0.1.14
+
+# OpenAI API compatível com langchain-openai
 openai==1.40.2
+
+# Banco vetorial
 chromadb==0.5.5
+
+# Utilidades
 python-dotenv
 pypdf
 python-docx
