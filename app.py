@@ -4,7 +4,11 @@ import langchain
 # tentativa de detectar se o pacote está presente
 try:
     import langchain_openai
-    st.write("LangChain-OpenAI:", langchain_openai.__version__)
+    st.success("LangChain-OpenAI está instalado e funcionando!")
+except Exception as e:
+    st.error("Erro ao carregar LangChain-OpenAI")
+    st.error(str(e))
+
 except Exception as e:
     st.write("LangChain-OpenAI NÃO INSTALADO:", e)
 
