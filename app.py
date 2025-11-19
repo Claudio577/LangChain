@@ -1,11 +1,9 @@
 import streamlit as st
 import langchain
 import langchain_openai
-import openai
 
 st.write("LangChain:", langchain.__version__)
 st.write("LangChain-OpenAI:", langchain_openai.__version__)
-st.write("OpenAI SDK:", openai.__version__)
 
 st.title("💼 Agente Executivo – Estratégia Corporativa")
 
